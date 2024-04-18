@@ -14,8 +14,10 @@ def insert_data_from_csv(csv_file, table_name):
 
         df = pd.read_csv(csv_file_path)
 
-        df_columns = list(df.columns)
-        columns = ','.join(df_columns)
+        df.columns = df.columns.str.replace(' ', '_')
+        df.columns = df.columns.str.lower()
+
+        columns = ','.join(df.columns)
         values = [tuple(row) for row in df.to_numpy()]
 
         insert_query = f"INSERT INTO {table_name} ({columns}) VALUES %s"
