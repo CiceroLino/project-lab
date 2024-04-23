@@ -1,17 +1,17 @@
-version: "3.8"
+version: "3.9"
 
 services:
-    postgres:
-        image: postgres:latest
-        container_name: project-lab-db
-        environment:
-            POSTGRES_DB: laravel_db
-            POSTGRES_USER: laravel_user
-            POSTGRES_PASSWORD: secret
-        ports:
-            - "5432:5432"
-        volumes:
-            - pgdata:/var/lib/postgresql/data
+  postgres:
+    image: postgres:latest
+    container_name: project-lab-db
+    environment:
+      POSTGRES_DB: laravel_db
+      POSTGRES_USER: laravel_user
+      POSTGRES_PASSWORD: secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
 
 volumes:
-    pgdata:
+  pgdata:
