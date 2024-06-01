@@ -14,7 +14,8 @@ datasource db {
 }
 
 model products {
-  uniqe_id              String @id
+  id                    Int    @id @default(autoincrement())
+  uniqe_id              String
   product_name          String
   brand_name            String
   asin                  String
@@ -44,8 +45,9 @@ model products {
   product_description   String
 }
 
-model customer {
-  customer_id            String @id
+model customers {
+  id                     Int    @id @default(autoincrement())
+  customer_id            String
   age                    String
   gender                 String
   item_purchased         String
@@ -66,7 +68,8 @@ model customer {
 }
 
 model sales {
-  user_id          String @id
+  id               Int    @id @default(autoincrement())
+  user_id          String
   product_id       String
   interaction_type String
   time_stamp       String
